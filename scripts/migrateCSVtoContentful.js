@@ -1,8 +1,8 @@
 const csv = require('csvtojson')
 const csvFilePath = './files/drugAZ.csv'
 const contentfulImport = require('contentful-import')
+const config = require('./config')
 
-// dcc79ef889de395cfe851e83da2813a80f2a86cf6a6f24659d7bf4240b59f72e
 const importContent = {
   "contentTypes": [],
   "entries": [],
@@ -12,7 +12,6 @@ const importContent = {
   "roles": [],
   "editorInterfaces": []
 };
-
 
 csv()
   .fromFile(csvFilePath)
@@ -52,8 +51,8 @@ createJSONOutput = (data) => {
 
   const importOptions = {
     content: importContent,
-    spaceId: 'mltlrs3kods6',
-    managementToken: 'CFPAT-7eacdc0d6c30e3f9d549a1e98b3a0038f4ba7bf969118fc891672a557110648f',
+    spaceId: config.contentful.spaceId,
+    managementToken: config.contentful.managementToken,
     skipContentModel: true
   }
   contentfulImport(importOptions)
