@@ -1,0 +1,27 @@
+FROM node:9.8.0
+RUN apt-get update
+WORKDIR /usr/src/app
+
+# add `/usr/src/app/node_modules/.bin` to $PATH
+ENV PATH /usr/src/app/node_modules/.bin:/usr/src/app/node_modules/.bin:$PATH
+
+# add environment variables
+ARG NODE_ENV
+ENV NODE_ENV $NODE_ENV
+ENV REACT_APP_USERS_SERVICE_URL $REACT_APP_USERS_SERVICE_URL
+
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+
+COPY . .
+
+#RUN npm run start
+COPY ./provisioning/keepalive.sh /tmp/keepalive.sh
+
+#RUN chmod +x /tmp/keepalive.sh
+CMD [ "/tmp/keepalive.sh"]
+#RUN yarn build
+#CMD [ "yarn", "start"]
+
+#ENTRYPOINT ["npm", "run", "start"]

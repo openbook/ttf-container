@@ -1,0 +1,111 @@
+version: '2.1'
+services:
+
+  scripts:
+    build:
+      context: ./scripts
+      dockerfile: Dockerfile
+    volumes:
+     - ./scripts:/usr/src/app/
+     - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=dev
+      - PORT=3000
+
+  web:
+    build:
+      context: ./web
+      dockerfile: ../provisioning/WebDockerfile
+    volumes:
+     - ./web:/usr/src/app/
+     - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=dev
+      - PORT=3000
+    ports:
+      - 3000:3000 # expose ports - HOST:CONTAINER
+      - 9229:9229
+
+  nginx:
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      web:
+        condition: service_started
+    links:
+      - web
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+      - "13306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Welcome123
+    healthcheck:
+        test: ["CMD-SHELL", "mysqladmin -h 'localhost' -u root -pWelcome123 ping --silent"]
+        interval: 30s
+        timeout: 30s
+        retries: 3
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - dbnet
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.2
+    container_name: elasticsearch
+    depends_on:
+      mysql:
+          condition: service_healthy
+    healthcheck:
+        test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
+        interval: 30s
+        timeout: 30s
+        retries: 3
+    environment:
+      - "ES_JAVA_OPTS=-Xmx2g -Xms2g"
+      - bootstrap.memory_local=true
+      - cluster.name=adlp-cluster
+    ports:
+      - 19200:9200
+      - 19300:9300
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/etc/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/config/jvm.options:/etc/elasticsearch/config/jvm.options
+      - ./elasticsearch/config/log4j2.properties:/etc/elasticsearch/config/log4j2.properties
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - esnet
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.2.3
+    container_name: kibana
+    depends_on:
+      elasticsearch:
+          condition: service_healthy
+    ports:
+     - "5601:5601"
+    environment:
+     - ELASTICSEARCH_URL=http://elasticsearch:9200
+     - XPACK_MONITORING_ENABLED=false
+    depends_on:
+     - elasticsearch
+    networks:
+     - esnet
+
+volumes:
+  mysqldata:
+    driver: local
+  esdata:
+    driver: local
+
+networks:
+  esnet:
+    driver: bridge
+  dbnet:
+    driver: bridge
