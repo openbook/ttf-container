@@ -62,5 +62,4 @@ createJSONOutput = (data) => {
     .catch((err) => {
       console.log('Oh no! Some errors occurred!', err)
     })
-
 }
