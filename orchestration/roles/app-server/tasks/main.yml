@@ -1,0 +1,50 @@
+---
+
+ - seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
+
+ - yum:
+     name: '*'
+     state: latest
+
+ #- yum:
+#      name: epel-release
+
+ - group:
+      name: deploy
+      state: present
+
+ - user:
+    name: deploy
+    shell: /bin/bash
+    comment: "App ops user"
+    group: deploy
+    append: true
+
+ - file:
+     path: /home/deploy/app
+     owner: deploy
+     state: directory
+     mode: 0775
+
+ - get_url:
+    url: 'https://rpm.nodesource.com/setup_{{nodejs_version}}'
+    dest: /tmp/setup_node
+    mode: o+x
+
+ - shell: /tmp/setup_node
+
+ - yum:
+    name: nodejs
+    update_cache: yes
+
+ - name: Install pm2 (to run Node.js app).
+   npm: name=pm2 global=yes state=latest
+
+
+ - lineinfile:
+    destfile: /home/deploy/.bashrc
+    insertafter: EOF
+    line: 'export NODE_ENV={{node_env}}'

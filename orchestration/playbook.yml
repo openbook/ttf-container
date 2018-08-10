@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: yes
+
+  pre_tasks:
+    - include_vars: "./roles/app-server/vars/main.yml"
+
+  roles:
+    - app-server
