@@ -1,0 +1,442 @@
+{
+  "contentful_mltlrs3kods6_en-us_0.0.3": {
+    "aliases": {
+      "contentful_mltlrs3kods6_en-us": {}
+    },
+    "mappings": {
+      "drugPage": {
+        "properties": {
+          "appearance_howDoPeopleTakeIt": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "appearance_whatDoesItLookLike": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "appearance_whatDoesItTastesmellLike": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "description": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "effects_howDoesItEffectSocietyAndTheEnvironment": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "effects_howDoesItMakePeopleBehave": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "effects_howDoesItMakeYouFeel": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "effects_howLongDoesItStayInYourBody": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "effects_whatAreThePhysicalEffects": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "effects_whatIsTheComedownLike": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "id": {
+            "type": "keyword"
+          },
+          "law_whatIfYouAreCaughtWithIt": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "law_whatIsTheDrugClassification": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "risks_canYouGetAddicted": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "risks_isItDangerousToMixWithOtherDrugs": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "risks_whatAreTheRisks": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "risks_whatIsCutWith": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "slug": {
+            "type": "text",
+            "fields": {
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "synonyms": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "comma_separated": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "completion": {
+                "type": "completion",
+                "analyzer": "simple",
+                "preserve_separators": true,
+                "preserve_position_increments": true,
+                "max_input_length": 50
+              },
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "title": {
+            "type": "text",
+            "fields": {
+              "completion": {
+                "type": "completion",
+                "analyzer": "simple",
+                "preserve_separators": true,
+                "preserve_position_increments": true,
+                "max_input_length": 50
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "worried_howCanIHelpMyFriendWithTheirUse": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "worried_iFeelPressuredIntoTakingItWhatCanIDo": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          },
+          "worried_iveSpentAllMyMoneyOnItWhatCanIDo": {
+            "type": "text",
+            "term_vector": "with_positions_offsets",
+            "fields": {
+              "localised": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "english"
+              },
+              "partial": {
+                "type": "text",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "partial_word",
+                "search_analyzer": "simple"
+              }
+            }
+          }
+        }
+      }
+    },
+    "settings": {
+      "index": {
+        "number_of_shards": "5",
+        "provided_name": "contentful_mltlrs3kods6_en-us_0.0.3",
+        "creation_date": "1534153668785",
+        "analysis": {
+          "analyzer": {
+            "comma_separated": {
+              "filter": [
+                "lowercase"
+              ],
+              "tokenizer": "comma_separated_tokenizer"
+            },
+            "partial_word": {
+              "filter": [
+                "lowercase"
+              ],
+              "type": "custom",
+              "tokenizer": "partial_word_tokenizer"
+            }
+          },
+          "tokenizer": {
+            "partial_word_tokenizer": {
+              "token_chars": [
+                "letter",
+                "digit",
+                "punctuation"
+              ],
+              "min_gram": "2",
+              "type": "ngram",
+              "max_gram": "20"
+            },
+            "comma_separated_tokenizer": {
+              "pattern": "\\s*,\\s*",
+              "type": "pattern"
+            }
+          }
+        },
+        "number_of_replicas": "1",
+        "uuid": "ZtvC1HGIT7aMbarqgMR5VA",
+        "version": {
+          "created": "6020399"
+        }
+      }
+    }
+  }
+}

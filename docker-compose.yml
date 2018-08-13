@@ -11,6 +11,10 @@ services:
     environment:
       - NODE_ENV=dev
       - PORT=3000
+    ports:
+      - 13000:3000
+    networks:
+     - esnet
 
   web:
     build:
@@ -25,6 +29,8 @@ services:
     ports:
       - 3000:3000 # expose ports - HOST:CONTAINER
       - 9229:9229
+    networks:
+     - esnet
 
   nginx:
     build:
@@ -36,6 +42,8 @@ services:
     depends_on:
       web:
         condition: service_started
+    networks:
+     - esnet
     links:
       - web
 

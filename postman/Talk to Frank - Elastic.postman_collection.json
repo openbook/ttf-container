@@ -1,0 +1,749 @@
+{
+	"info": {
+		"_postman_id": "dda23477-f1d7-4993-b347-f90143ed1816",
+		"name": "Talk to Frank - Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin - index",
+			"item": [
+				{
+					"name": "Create index",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"aliases\": {},\n        \"mappings\": {\n            \"drugPage\": {\n                \"properties\": {\n                    \"appearance_howDoPeopleTakeIt\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"appearance_whatDoesItLookLike\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"appearance_whatDoesItTastesmellLike\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"description\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"effects_howDoesItEffectSocietyAndTheEnvironment\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"effects_howDoesItMakePeopleBehave\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"effects_howDoesItMakeYouFeel\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"effects_howLongDoesItStayInYourBody\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"effects_whatAreThePhysicalEffects\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"effects_whatIsTheComedownLike\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"id\": {\n                        \"type\": \"keyword\"\n                    },\n                    \"law_whatIfYouAreCaughtWithIt\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"law_whatIsTheDrugClassification\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"risks_canYouGetAddicted\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"risks_isItDangerousToMixWithOtherDrugs\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"risks_whatAreTheRisks\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"risks_whatIsCutWith\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"slug\": {\n                        \"type\": \"text\",\n                        \"fields\": {\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"synonyms\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            },\n\t\t\t\t            \"completion\": {\n\t\t\t\t              \"type\": \"completion\"\n\t\t\t\t            }\n                        }\n                    },\n                    \"title\": {\n                        \"type\": \"text\",\n                        \"fields\": {\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            },\n\t\t\t\t            \"completion\": {\n\t\t\t\t              \"type\": \"completion\"\n\t\t\t\t            }\n                        }\n                    },\n                    \"worried_howCanIHelpMyFriendWithTheirUse\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"worried_iFeelPressuredIntoTakingItWhatCanIDo\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    },\n                    \"worried_iveSpentAllMyMoneyOnItWhatCanIDo\": {\n                        \"type\": \"text\",\n                        \"term_vector\": \"with_positions_offsets\",\n                        \"fields\": {\n                            \"localised\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"english\"\n                            },\n                            \"partial\": {\n                                \"type\": \"text\",\n                                \"term_vector\": \"with_positions_offsets\",\n                                \"analyzer\": \"partial_word\",\n                                \"search_analyzer\": \"simple\"\n                            }\n                        }\n                    }\n                }\n            }\n        },\n        \"settings\": {\n            \"index\": {\n                \"number_of_shards\": \"5\",\n                \"analysis\": {\n                    \"analyzer\": {\n                        \"partial_word\": {\n                            \"filter\": [\n                                \"lowercase\"\n                            ],\n                            \"type\": \"custom\",\n                            \"tokenizer\": \"partial_word_tokenizer\"\n                        }\n                    },\n                    \"tokenizer\": {\n                        \"partial_word_tokenizer\": {\n                            \"token_chars\": [\n                                \"letter\",\n                                \"digit\",\n                                \"punctuation\"\n                            ],\n                            \"min_gram\": \"4\",\n                            \"type\": \"ngram\",\n                            \"max_gram\": \"10\"\n                        }\n                    }\n                },\n                \"number_of_replicas\": \"1\"\n            }\n        }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/contentful_mltlrs3kods6_en-us_0.0.2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"contentful_mltlrs3kods6_en-us_0.0.2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename an index alias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actions\": [\n        { \"remove\": { \"alias\": \"[ALIAS_NAME]\", \"index\": \"[INDEX_NAME]\"}},\n        { \"add\": { \"alias\": \"[ALIAS_NAME]\", \"index\": \"[INDEX_NAME]\"}}\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/_aliases",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"_aliases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add mapping Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"drugPage\": {\n    \"properties\": {\n      \"appearance_howDoPeopleTakeIt\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"appearance_whatDoesItLookLike\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"appearance_whatDoesItTastesmellLike\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"description\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"effects_howDoesItEffectSocietyAndTheEnvironment\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"effects_howDoesItMakePeopleBehave\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"effects_howDoesItMakeYouFeel\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"effects_howLongDoesItStayInYourBody\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"effects_whatAreThePhysicalEffects\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"effects_whatIsTheComedownLike\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"id\": {\n        \"type\": \"keyword\"\n      },\n      \"law_whatIfYouAreCaughtWithIt\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"law_whatIsTheDrugClassification\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"risks_canYouGetAddicted\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"risks_isItDangerousToMixWithOtherDrugs\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"risks_whatAreTheRisks\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"risks_whatIsCutWith\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"slug\": {\n        \"type\": \"text\",\n        \"fields\": {\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"synonyms\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"title\": {\n        \"type\": \"text\",\n        \"fields\": {\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"worried_howCanIHelpMyFriendWithTheirUse\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"worried_iFeelPressuredIntoTakingItWhatCanIDo\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      },\n      \"worried_iveSpentAllMyMoneyOnItWhatCanIDo\": {\n        \"type\": \"text\",\n        \"term_vector\": \"with_positions_offsets\",\n        \"fields\": {\n          \"localised\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"english\"\n          },\n          \"partial\": {\n            \"type\": \"text\",\n            \"term_vector\": \"with_positions_offsets\",\n            \"analyzer\": \"partial_word\",\n            \"search_analyzer\": \"simple\"\n          }\n        }\n      }\n    }\n  }\n}\n"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_mapping",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_mapping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Copy index to new index",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"source\": {\n    \"index\": \"contentful_mltlrs3kods6_en-us_0.0.1\"\n  },\n  \"dest\": {\n    \"index\": \"contentful_mltlrs3kods6_en-us_0.0.2\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/_reindex?pretty",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"_reindex"
+							],
+							"query": [
+								{
+									"key": "pretty",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an index alias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actions\": [\n        { \"add\": {\n            \"alias\": \"contentful_mltlrs3kods6_en-us\",\n            \"index\": \"contentful_mltlrs3kods6_en-us_0.0.3\"\n        }}\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/_aliases",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"_aliases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete index",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove an index alias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actions\": [\n        { \"remove\": {\n            \"alias\": \"contentful_mltlrs3kods6_en-us\",\n            \"index\": \"contentful_mltlrs3kods6_en-us_0.0.1\"\n        }}\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/_aliases",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"_aliases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rename an index alias",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actions\": [\n        { \"remove\": { \"alias\": \"contentful_mltlrs3kods6_en-us\", \"index\": \"contentful_mltlrs3kods6_en-us_0.0.1\"}},\n        { \"add\": { \"alias\": \"contentful_mltlrs3kods6_en-us\", \"index\": \"contentful_mltlrs3kods6_en-us_0.0.2\"}}\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/_aliases",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"_aliases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get index mapping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/_mapping",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"_mapping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get index settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/{{indexName}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get index aliases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/_alias",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"_alias"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drug pages",
+			"item": [
+				{
+					"name": "Fetch all drug pages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search?size=100&pretty",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "100"
+								},
+								{
+									"key": "pretty",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch drug by name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t\t\"bool\": {\n\t\t\t\"must\": {\n\t\t\t\t\"match\": {\n\t\t\t\t\t\"title\": \"{{searchTerm}}\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fuzzy search by drug name, synonym and description",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": {\n    \"multi_match\": {\n      \"fields\":  [ \"title.partial^10\", \"synonyms.partial^5\", \"description\", \"appearance_whatDoesItLookLike\" ],\n      \"query\":     \"webhook\",\n      \"fuzziness\": \"auto\"\n    }\n  },\n    \"highlight\": {\n      \"order\": \"score\",\n      \"number_of_fragments\" : 2,\n      \"fragment_size\" : 150,\n      \"fields\" : {\n      \t\"_all\" : { \"pre_tags\" : [\"<em>\"], \"post_tags\" : [\"</em>\"] },\n        \"title.partial\" : { \"number_of_fragments\" : 5 },\n        \"description.partial\" : { \"number_of_fragments\" : 5 },\n        \"appearance_whatDoesItLookLike.partial\" : { \"number_of_fragments\" : 5 },\n        \"synonyms.partial\" : { \"number_of_fragments\" : 5 }\n      }\n    },\n  \"suggest\": {\n    \"text\": \"metha\",\n    \"synonyms\": {\n      \"term\": {\n        \"field\": \"synonyms\",\n        \"size\": 3\n      }\n    },\n    \"title\": {\n      \"term\": {\n        \"field\": \"title\",\n        \"size\": 2\n      }\n    }\n  }\n\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test analysis",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"field\": \"synonyms.comma_separated\",\n  \"text\": \"methadrone\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/_analyze",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"_analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a record",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_analyze",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_analyze"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suggest alternative",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"suggest\": {\n    \"text\": \"mep\",\n    \"simple_phrase\": {\n      \"phrase\": {\n        \"field\": \"title\",\n        \"confidence\": 1.0,\n        \"size\": 3,\n        \"gram_size\": 1,\n        \"max_errors\": 0.5,\n        \"direct_generator\": [ {\n          \"field\": \"synonyms.comma_separated\",\n          \"suggest_mode\": \"always\",\n          \"max_edits\": 1,\n          \"prefix_length\": 2,\n          \"min_word_length\": 2\n        } ],\n        \"highlight\": {\n          \"pre_tag\": \"<em>\",\n          \"post_tag\": \"</em>\"\n        }\n      }\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suggest alternative term",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"suggest\": {\n    \"text\": \"mephad\",\n    \"synonyms\": {\n      \"term\": {\n        \"field\": \"synonyms\"\n      }\n    },\n    \"title\": {\n      \"term\": {\n        \"field\": \"title\"\n      }\n    },\n    \"synonymspartial\": {\n      \"term\": {\n        \"field\": \"synonyms.partial\"\n      }\n    },\n    \"titlepartial\": {\n      \"term\": {\n        \"field\": \"title.partial\"\n      }\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Explain match",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": {\n    \"multi_match\": {\n      \"fields\":  [ \"title.partial^10\", \"synonyms.partial^5\", \"description\", \"appearance_whatDoesItLookLike\" ],\n      \"query\":     \"coke\",\n      \"fuzziness\": \"auto\"\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/6z1GtjGJIQsOmwOsC0Y4MK/_explain",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"6z1GtjGJIQsOmwOsC0Y4MK",
+								"_explain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Explain query",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"query\": {\n    \"multi_match\": {\n      \"fields\":  [ \"title.partial^10\", \"synonyms.partial^5\", \"description\", \"appearance_whatDoesItLookLike\" ],\n      \"query\":     \"coke\",\n      \"fuzziness\": \"auto\"\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_validate/query?explain=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_validate",
+								"query"
+							],
+							"query": [
+								{
+									"key": "explain",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prefix query",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t\t\"prefix\": {\n\t\t\t\"title\": \"me\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ngram query",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n\t\t\"prefix\": {\n\t\t\t\"title.partial\": \"me\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Completion query",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"suggest\": {\n    \t\"text\": \"cake\",\n        \"titlec\" : {\n            \"completion\" : {\n                \"field\" : \"title.completion\"\n            }\n        },\n        \"synonymc\" : {\n            \"completion\" : {\n                \"field\" : \"synonyms.completion\"\n            }\n        },\n        \"title\" : {\n            \"term\" : {\n                \"field\" : \"title\"\n            }\n        },\n        \"synonym\" : {\n            \"term\" : {\n                \"field\" : \"synonyms\"\n            }\n        },\n        \"titlep\" : {\n            \"term\" : {\n                \"field\" : \"title.partial\"\n            }\n        },\n        \"synonymp\" : {\n            \"term\" : {\n                \"field\" : \"synonyms.partial\"\n            }\n        }\n        \n    }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Composite query",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\": {\n    \t\"bool\": {\n    \t\t\"should\": [{ \n    \t\t\t\"constant_score\" : {\n\t            \t\t\"filter\" : {\n\t                \t\t\"term\" : { \n\t                \t\t\t\"title\" : \"{{searchTerm}}\"\n\t                \t\t}\n\t            \t\t},\n\t            \t\t\"boost\" : 100\n\t\t\t\t\t}\n\t\t\t\t},{\n\t\t\t    \"multi_match\": {\n\t\t\t      \"fields\":  [ \"title^5\", \"synonyms.partial^5\" ],\n\t\t\t      \"query\":     \"{{searchTerm}}\",\n\t\t\t      \"fuzziness\": \"1\"\n\t\t\t    }\n    \t\t},{\n\t\t\t    \"match_phrase\": {\n\t\t\t    \t\"description.localised\": \"{{searchTerm}}\"\n\t\t\t    }\n    \t\t},{\n\t\t\t    \"match_phrase\": {\n\t\t\t    \t\"appearance_whatDoesItLookLike.localised\": \"{{searchTerm}}\"\n\t\t\t    }\n    \t\t}]\n    \t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/6z1GtjGJIQsOmwOsC0Y4MK/_explain",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"6z1GtjGJIQsOmwOsC0Y4MK",
+								"_explain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drug page search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"query\": {\n        \"bool\": {\n          \"minimum_should_match\": 1,\n          \"should\": [{\n            \"constant_score\" : {\n              \"filter\" : {\n                \"term\" : {\n                  \"title\" : \"{{searchTerm}}\"\n                }\n              },\n              \"boost\" : 30\n            }\n          },{\n            \"constant_score\" : {\n              \"filter\" : {\n                \"term\" : {\n                  \"synonym.comma_separated\" : \"{{searchTerm}}\"\n                }\n              },\n              \"boost\" : 5\n            }\n          },{\n            \"multi_match\": {\n              \"fields\":  [ \"title\", \"synonyms.comma_separated\" ],\n              \"query\":     \"{{searchTerm}}\",\n              \"fuzziness\": \"auto\"\n            }\n          },\n          {\n            \"multi_match\" : {\n              \"query\": \"{{searchTerm}}\",\n              \"fields\": [\"description.localised\", \"appearance_whatDoesItTastesmellLike.localised\", \"appearance_howDoPeopleTakeIt.localised\", \"effects_howDoesItMakeYouFeel.localised\", \"effects_howDoesItMakePeopleBehave.localised\", \"effects_whatAreThePhysicalEffects.localised\", \"effects_whatIsTheComedownLike.localised\", \"effects_howLongDoesItStayInYourBody.localised\", \"risks_whatAreTheRisks.localised\", \"risks_canYouGetAddicted.localised\", \"risks_isItDangerousToMixWithOtherDrugs.localised\", \"risks_whatIsCutWith.localised\", \"effects_howDoesItEffectSocietyAndTheEnvironment.localised\", \"law_whatIsTheDrugClassification.localised\", \"law_whatIfYouAreCaughtWithIt.localised\", \"worried_iFeelPressuredIntoTakingItWhatCanIDo.localised\", \"worried_howCanIHelpMyFriendWithTheirUse.localised\", \"worried_iveSpentAllMyMoneyOnItWhatCanIDo.localised\"],\n              \"type\": \"best_fields\",\n              \"minimum_should_match\": \"50%\",\n              \"slop\": 20\n            }\n          }]\n        }\n      },\n      \"highlight\": {\n        \"order\": \"score\",\n        \"number_of_fragments\" : 2,\n        \"pre_tags\" : [\"<strong>\"], \n        \"post_tags\" : [\"</strong>\"],\n        \"fragment_size\" : 150,\n        \"fields\" : {\n          \"_all\" : { \"pre_tags\" : [\"<strong>\"], \"post_tags\" : [\"</strong>\"] },\n          \"title\" : { \"fragment_size\" : 20 },\n          \"synonyms.comma_separated\" : { \"fragment_size\" : 1, \"pre_tags\" : [\"\"], \"post_tags\" : [\"\"]},\n\t\t\"title.localised\" : {},\n\t\t\"synonyms.partial\" : {},\n\t\t\"title.partial\" : {},\n\t\t\"description.localised\" : {},\n\t\t\"appearance_whatDoesItTastesmellLike.localised\" : {},\n\t\t\"appearance_howDoPeopleTakeIt.localised\" : {},\n\t\t\"effects_howDoesItMakeYouFeel.localised\" : {},\n\t\t\"effects_howDoesItMakePeopleBehave.localised\" : {},\n\t\t\"effects_whatAreThePhysicalEffects.localised\" : {},\n\t\t\"effects_whatIsTheComedownLike.localised\" : {},\n\t\t\"effects_howLongDoesItStayInYourBody.localised\" : {},\n\t\t\"risks_whatAreTheRisks.localised\" : {},\n\t\t\"risks_canYouGetAddicted.localised\" : {},\n\t\t\"risks_isItDangerousToMixWithOtherDrugs.localised\" : {},\n\t\t\"risks_whatIsCutWith.localised\" : {},\n\t\t\"effects_howDoesItEffectSocietyAndTheEnvironment.localised\" : {},\n\t\t\"law_whatIsTheDrugClassification.localised\" : {},\n\t\t\"law_whatIfYouAreCaughtWithIt.localised\" : {},\n\t\t\"worried_iFeelPressuredIntoTakingItWhatCanIDo.localised\" : {},\n\t\t\"worried_howCanIHelpMyFriendWithTheirUse.localised\" : {},\n\t\t\"worried_iveSpentAllMyMoneyOnItWhatCanIDo.localised\" : {}\n        }\n      },\n      \"suggest\": {\n        \"text\": \"{{searchTerm}}\",\n        \"titlec\" : {\n          \"completion\" : {\n            \"field\" : \"title.completion\"\n          }\n        },\n        \"synonymc\" : {\n          \"completion\" : {\n            \"field\" : \"synonyms.completion\"\n          }\n        },\n        \"title\" : {\n          \"term\" : {\n            \"field\" : \"title\"\n          }\n        },\n        \"synonym\" : {\n          \"term\" : {\n            \"field\" : \"synonyms\"\n          }\n        }\n      }\n    }"
+						},
+						"url": {
+							"raw": "{{url}}/{{indexName}}/drugPage/_search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{indexName}}",
+								"drugPage",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Elasticsearch info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get indices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/_cat/indices?v",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"_cat",
+						"indices"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all entries for all types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/_search?q=*:*&size=300",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"_search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "*:*"
+						},
+						{
+							"key": "size",
+							"value": "300"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

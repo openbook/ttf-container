@@ -6,11 +6,12 @@
   "dependencies": {
     "contentful-cli": "^0.15.0",
     "contentful-import": "^7.1.0",
-    "contentful-text-search": "^0.1.1",
     "csvtojson": "^2.0.7",
     "js-yaml": "^3.12.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ngrok": "^3.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -20,8 +20,9 @@ function loadConfigFile (file) {
 }
 
 function loadConfig () {
-  if (fs.existsSync('config.yml')) {
-    return loadConfigFile('config.yml')
+  console.log(fs.existsSync(__dirname + '/config.yml'))
+  if (fs.existsSync(__dirname + '/config.yml')) {
+    return loadConfigFile(__dirname + '/config.yml')
   } else {
     let templ = {}
     multiFile = true

@@ -47,7 +47,6 @@ createJSONOutput = (data) => {
       }
     };
   });
-  console.log(importContent.entries[0]);
 
   const importOptions = {
     content: importContent,
