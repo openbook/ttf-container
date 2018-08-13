@@ -1,6 +1,13 @@
 version: '2.1'
 services:
 
+  orchestration:
+    build:
+      context: ./orchestration
+      dockerfile: Dockerfile
+    networks:
+     - esnet
+
   scripts:
     build:
       context: ./scripts
